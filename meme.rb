@@ -1,7 +1,7 @@
 
 class Meme
   def i_can_has_cheezburger?
-    "NOPE!"
+    "OHAI!"
   end
 
   def will_it_blend?
