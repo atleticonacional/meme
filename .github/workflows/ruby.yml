@@ -10,9 +10,9 @@ on:
 
 jobs:
   build:
- 
+
     runs-on: ubuntu-latest
- 
+
     steps:
     - name: generate message to maybe troll you
       id: ohrly
@@ -22,7 +22,7 @@ jobs:
       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-         msg: ${{ setps.ohrly.outputs.message }} 
+         msg: ${{ steps.ohrly.outputs.message }}
     - uses: actions/checkout@master
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
