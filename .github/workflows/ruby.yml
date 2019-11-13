@@ -10,10 +10,19 @@ on:
 
 jobs:
   build:
-
+ 
     runs-on: ubuntu-latest
-
+ 
     steps:
+    - name: generate message to maybe troll you
+      id: ohrly
+      uses: jpemberthy/oh-rly@master
+    - name: maybe comment on the PR
+      uses: unsplash/comment-on-pr@master
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+         msg: ${{ setps.ohrly.outputs.message }} 
     - uses: actions/checkout@master
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
